@@ -1,0 +1,13 @@
+services:
+  dgui:
+    image: docker.jj.pbck.online:4443/dgui:latest
+    container_name: dgui
+    restart: always
+    ports:
+      - "5008:5008"
+    environment:
+      - ADMIN_USER=admin
+      - ADMIN_PASS=admin123
+      - JWT_SECRET=change-this-secret-in-production
+    volumes:
+      - ./data:/app/data
